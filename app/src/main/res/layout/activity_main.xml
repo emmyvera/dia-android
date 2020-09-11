@@ -1,18 +1,161 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="8dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No of Pregnancies (0-25)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/pregEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_marginBottom="8dp"
+            android:textSize="26sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Glucose Level (0-500)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/glucoseEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blood Pressure (0-150)mm Hg lower number"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/bpEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skin Thickness (0-70)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/stEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insulin Level (0-500)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/insulinEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BMI (0-50)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/bmiEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diabetes Pedigree Function (0-1)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/dpfEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|numberDecimal"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age (0-150)"
+            android:textSize="18sp"
+            android:layout_marginBottom="4dp"
+            style="@style/TextAppearance.AppCompat.Caption"/>
+
+        <EditText
+            android:id="@+id/ageEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="26sp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/diagnoseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diagnose"
+            android:layout_gravity="center"
+            android:background="@drawable/edge_bg"
+            android:textColor="@android:color/white"
+            android:padding="4dp"/>
+    </LinearLayout>
+
+</ScrollView>

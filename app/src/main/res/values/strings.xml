@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Dia</string>
+
+    <string name="diabetes_result">Diabetes Report</string>
+    <string name="likelihood">Likelihood</string>
+    <string name="bp_result">BP Result</string>
+    <string name="bmi_result">BMI Result</string>
+    <string name="bp_no">bp No</string>
+    <string name="bmi_no">bmi No</string>
+
 </resources>
