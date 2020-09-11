@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         String dpf = dpfEdit.getText().toString();
         String age = ageEdit.getText().toString();
 
-        Call<User> call = apiInterface.performDiagnoses("4", "138", "82", "30",
-                "170", "24", "0.255", "38");
+        Call<User> call = apiInterface.performDiagnoses(pregnancies, glucose, bp, st,
+                insulin, bmi, dpf, age);
 
         call.enqueue(new Callback<User>() {
             @Override

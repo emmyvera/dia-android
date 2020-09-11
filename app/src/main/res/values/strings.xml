@@ -8,4 +8,12 @@
     <string name="bp_no">bp No</string>
     <string name="bmi_no">bmi No</string>
 
+    <string name="no_diabetes">No Diabetes Here!</string>
+    <string name="yes_diabetes">Diabetes Detected, You Need To See A Doctor!</string>
+
+    <string name="no_likelihood">Low Likelihood of Diabetes Detected.</string>
+    <string name="maybe_likelihood">Medium Likelihood of Diabetes, Go For Medical Check Up.</string>
+    <string name="yes_likelihood">High Likelihood of Diabetes, Go See A Doctor.</string>
+
+
 </resources>

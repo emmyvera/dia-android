@@ -45,10 +45,98 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void populateView(){
-        resultText.setText(result);
-        likelihoodText.setText(likelihood);
+
+        ResultImageAndText(result);
+        LikelihoodText(likelihood);
+        BPResult(bpNo);
+        BMIResult(bmiNo);
+
+        //resultText.setText(result);
+        //likelihoodText.setText(likelihood);
         bpText.setText(bpResult);
         bmiText.setText(bmiResult);
+    }
+
+    public void ResultImageAndText(String result){
+        if (result.equals("0")){
+            resultImage.setImageDrawable(getDrawable(R.drawable.ic_round_check_24));
+            resultImage.setColorFilter(getColor(R.color.good_green));
+            resultText.setText(getResources().getString(R.string.no_diabetes));
+            diabetesImage.setImageDrawable(getDrawable(R.drawable.ic_round_check_24));
+            diabetesImage.setColorFilter(getColor(R.color.good_green));
+        }else if (result.equals("1")){
+            resultImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            resultImage.setColorFilter(getColor(R.color.bad_red));
+            resultText.setText(getResources().getString(R.string.yes_diabetes));
+            diabetesImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            diabetesImage.setColorFilter(getColor(R.color.bad_red));
+        }else {
+            resultImage.setImageDrawable(getDrawable(R.drawable.ic_round_remove_24));
+        }
+    }
+
+    public void LikelihoodText(String likelihood){
+        float result = Float.parseFloat(likelihood);
+        String resultInStr = String.format("%.2f, ", result);
+
+        if (result <= 0.33){
+            likelihoodText.setText(resultInStr + getResources().getString(R.string.no_likelihood));
+            likelihoodImage.setImageDrawable(getDrawable(R.drawable.ic_round_check_24));
+            likelihoodImage.setColorFilter(getColor(R.color.good_green));
+        }else if (result <= 0.67){
+            likelihoodText.setText(resultInStr + getResources().getString(R.string.maybe_likelihood));
+            likelihoodImage.setImageDrawable(getDrawable(R.drawable.ic_round_remove_24));
+            likelihoodImage.setColorFilter(getColor(R.color.warning_yellow));
+        }else{
+            likelihoodText.setText(resultInStr + getResources().getString(R.string.yes_likelihood));
+            likelihoodImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            likelihoodImage.setColorFilter(getColor(R.color.bad_red));
+        }
+    }
+
+    public void BPResult(int bpNo){
+        if (bpNo < 60){
+            bpImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            bpImage.setColorFilter(getColor(R.color.bad_red));
+        }
+        else if (bpNo < 80) {
+            bpImage.setImageDrawable(getDrawable(R.drawable.ic_round_check_24));
+            bpImage.setColorFilter(getColor(R.color.good_green));
+        }
+        else if (bpNo < 90){
+            bpImage.setImageDrawable(getDrawable(R.drawable.ic_round_remove_24));
+            bpImage.setColorFilter(getColor(R.color.warning_yellow));
+        }
+        else {
+            bpImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            bpImage.setColorFilter(getColor(R.color.bad_red));
+        }
+
+    }
+
+    public void BMIResult(int bmiNo){
+
+        if (bmiNo < 16){
+            bmiImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            bmiImage.setColorFilter(getColor(R.color.bad_red));
+        }
+        else if (bmiNo < 18.5) {
+            bmiImage.setImageDrawable(getDrawable(R.drawable.ic_round_remove_24));
+            bmiImage.setColorFilter(getColor(R.color.warning_yellow));
+        }
+        else if (bmiNo < 25) {
+            bmiImage.setImageDrawable(getDrawable(R.drawable.ic_round_check_24));
+            bmiImage.setColorFilter(getColor(R.color.good_green));
+        }
+        else if (bmiNo < 35) {
+            bmiImage.setImageDrawable(getDrawable(R.drawable.ic_round_remove_24));
+            bmiImage.setColorFilter(getColor(R.color.warning_yellow));
+        }
+        else {
+            bmiImage.setImageDrawable(getDrawable(R.drawable.ic_round_clear_24));
+            bmiImage.setColorFilter(getColor(R.color.bad_red));
+        }
+
     }
 
 }
